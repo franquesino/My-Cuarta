@@ -1,5 +1,6 @@
 package com.example.mycuarta
 
+import android.widget.Button
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,10 +17,15 @@ class DetalleCamaraActivity : AppCompatActivity() {
         val tvMarca = findViewById<TextView>(R.id.tvMarcaDetalle)
         val tvModelo = findViewById<TextView>(R.id.tvModeloDetalle)
         val tvPrecio = findViewById<TextView>(R.id.tvPrecioDetalle)
+        val btnAtras = findViewById<Button>(R.id.btnAtras)
 
         imgCamara.setImageResource(camara.imagen)
         tvMarca.text = "Marca: ${camara.marca}"
         tvModelo.text = "Modelo: ${camara.modelo}"
         tvPrecio.text = "Precio: ${camara.precio}"
+
+        btnAtras.setOnClickListener {
+            finish() // Cierra esta actividad y vuelve a la anterior
+        }
     }
 }
